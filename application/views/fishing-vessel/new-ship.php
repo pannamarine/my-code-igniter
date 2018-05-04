@@ -7,6 +7,9 @@
                     <div class="form-group">
                         <label for="">Vessel Name</label>
                         <input class="form-control" type="text">
+                        <div><select class="form-control">
+                        <option>Default select</option>
+                        </select></div>
                     </div>
                     <button class="btn btn-warning">Add</button>
                     <button class="btn btn-secondary">Reset</button>
