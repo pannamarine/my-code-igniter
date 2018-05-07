@@ -5,27 +5,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class FishingVessel_model extends CI_Model {
 
-    
     public function __construct()
     {
         parent::__construct();
-
+        
         $this->load->database();
-
-        //Do your magic here
     }
-    
+
     public function get_all()
     {
+        /* SELECT * form vessel */
         $query = $this->db->get('vessel');
         $result = $query->result_array();
-        // var_dump($result);
+        //var_dump($result);
         return $result;
     }
 
+    public function save_new_vessel()
+    {
+        
+        $data['Name'] = $this->input->post('vesselName'); //$_POST['vesselName']
+        $data['Country_ID'] = $this->input->post('country'); //$_POST['country']
+
+        //var_dump($data);
+        //INSERT INTO Vessel() VALUED ();
+       return $this->db->insert('Vessel',$data);
+    }
+    
+    public function delete_vessel()
+{
+    $data['id'] = $this->input->post('vesselID');
+
+    return $this->db->delete('Vessel',$data);
 }
 
-/* End of file FishingVessel_model.php */
 
+}
+/* End of file FishingVessel_model.php */
 
 ?>
