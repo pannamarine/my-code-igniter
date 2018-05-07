@@ -2,16 +2,30 @@
     <div class="col-lg-3 col-md-1 col-sm-0"></div>
         <div class="card col-6 colmd-10 col-sm-12">
             <div class="card-body">
-            <h5 class="card-title">Fishing Vessel Information</h5>
-                <form action="">
+            <h5 class="card-title">
+                Fishing Vessel Information</h5>
+
+                <?php echo validation_error(); ?>
+                
+                <!-- <form action=""> -->
+                    <?php echo form_open('fishingvessel/create') ?>
                     <div class="form-group">
-                        <label for="">Vessel Name</label>
-                        <input class="form-control" type="text">
-                        <div><select class="form-control">
-                        <option>Default select</option>
-                        </select></div>
+                        <label for="VesselName">Vessel Name</label>
+                        <input id="VesselName" name="vesselName" class="form-control" type="text">
+</div>
+                    <div class="form-group">
+                    <label for="">Country</label>
+                    <select id="country" name="country" class="form-control">
+
+                        <?php foreach ($country_list as $country): ?>
+
+                        <option value="<?php echo $country['id'] ?>">
+                            <?php echo $country['Name'] ?>
+                        </option>
+                        <?php endforeach ?>
+                        </select>
                     </div>
-                    <button class="btn btn-warning">Add</button>
+                        <input type="submit" value="Add" name="submit" class="btn btn-warning" /> 
                     <button class="btn btn-secondary">Reset</button>
                 </form>
         </div>
