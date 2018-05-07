@@ -21,17 +21,17 @@ class FishingVessel_model extends CI_Model {
         return $result;
     }
 
-    public function save_new_vessel()
+    public function save_new_vessel($image_path)
     {
         
         $data['Name'] = $this->input->post('vesselName'); //$_POST['vesselName']
         $data['Country_ID'] = $this->input->post('country'); //$_POST['country']
-
+        $data['imagePath'] = $image_path;
         //var_dump($data);
         //INSERT INTO Vessel() VALUED ();
        return $this->db->insert('Vessel',$data);
     }
-    
+
     public function delete_vessel()
 {
     $data['id'] = $this->input->post('vesselID');
