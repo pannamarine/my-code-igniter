@@ -20,7 +20,7 @@
 
 ?>
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-        <div class="card">
+        <div class="card" style="350">
             <div class="card-header">
                 <?php echo $ship['Name'] ?>
             </div>
@@ -37,6 +37,9 @@
              <input type="submit" name="submit" value="delete" class="btn btn-danger"/>
              </form>
         </div>
+        <img src="<?php echo base_url($echo['imagePath']) ?>"
+        class="card-img-bottom"
+        alt="">
     </div>
 
 <?php
