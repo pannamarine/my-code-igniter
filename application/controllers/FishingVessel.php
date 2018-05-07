@@ -63,13 +63,15 @@ class FishingVessel extends CI_Controller
         } 
         else 
         {
-            $upload_success = $this->upload->do-upload('vesselImage');
+            $upload_success = $this->upload->do_upload('vesselImage');
 
             if($upload_success){
 
                 $upload_data = $this->upload->data();
 
-                var_dump($upload_data);
+                $image_path = 'upload/' .$upload_data['file_name'];
+
+                //  var_dump($upload_data);
 
             // เป็นคำสั่งเพื่อดูว่าข้อมูลได้ถูกส่งมารึเปล่า
             // var_dump($_POST);
